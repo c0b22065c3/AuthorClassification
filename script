@@ -1,9 +1,12 @@
 gcc -o pr pretreatment.c
-gcc -o gz gzipper.c -lz
+gcc -o size size.c
+
+rm gzip/*.gz
 
 for file in *.txt
 do
  ./pr ${file} > data/${file}
- ./gz data/${file}
- mv data/${file}.gz gzip/
+ cp data/${file} gzip/
+ gzip gzip/${file}
+ ./size gzip/${file}.gz
 done
