@@ -4,5 +4,6 @@ gcc -o gz gzipper.c -lz
 for file in *.txt
 do
  ./pr ${file} > data/${file}
- ./gz data/${file} 
+ ./gz data/${file}
+ mv data/${file}.gz gzip/
 done
