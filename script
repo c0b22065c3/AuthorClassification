@@ -1,0 +1,4 @@
+for file in works/*.txt
+do
+ ./pr ${file} > outputs/${file}
+done
