@@ -1,6 +1,6 @@
 // テキストファイルの結合
-// コンパイル：gcc -o ncd ncd.c
-// 実行：./pr ファイル名
+// コンパイル：gcc -o merge merge.c
+// 実行：./pr ファイル名 ファイル名
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

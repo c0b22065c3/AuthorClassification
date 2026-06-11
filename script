@@ -1,27 +1,34 @@
 gcc -o pr pretreatment.c
 gcc -o size size.c
 
-rm gzip/*.gz
-
 # for file in *.txt
 # do
 #  ./pr ${file} > data/${file}
 #  cp data/${file} gzip/
 #  gzip gzip/${file}
-# #  ./size gzip/${file}.gz
+#  ./size gzip/${file}.gz
 # done
 
 i=0
 j=0
 one=1
 
-for file1 in data/*.txt
+rm ncd_list.txt
+
+for file1 in *.txt
 do
- for file2 in data/*.txt
+ for file2 in *.txt
  do
-  # ./merge ${file1} ${file2} > mergefiles/merged${i}-${j}.txt
+  # ./merge data/${file1} data/${file2} > mergefiles/merged${i}-${j}.txt
+#   cp mergefiles/merged${i}-${j}.txt ./mergedgzips
+#   gzip mergedgzips/merged${i}-${j}.txt
+#   ./size mergedgzips/merged${i}-${j}.txt.gz > ncd_paramator/ncd${i}-${j}.txt
+#   ./size gzip/${file1}.gz >> ncd_paramator/ncd${i}-${j}.txt
+#   ./size gzip/${file2}.gz >> ncd_paramator/ncd${i}-${j}.txt
+  ./ncd ncd_paramator/ncd${i}-${j}.txt >> ncd_list.txt
   j=$((${j}+${one}))
  done
+ echo ------- >> ncd_list.txt
  i=$((${i}+${one}))
  j=0 
 done
