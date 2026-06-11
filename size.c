@@ -1,6 +1,6 @@
 // ファイルのサイズを測る
 // コンパイル：gcc -o size size.c
-// 実行：./pr ファイル名
+// 実行：./size ファイル名
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     fgetpos(fp, &fsize); // ファイルポインタの位置を取得
 
-    printf("%s\nsize=%lld Byte\n\n", argv[1], fsize);
+    printf("%lld\n", fsize);
 
     fclose(fp);
 

@@ -3,10 +3,25 @@ gcc -o size size.c
 
 rm gzip/*.gz
 
-for file in *.txt
+# for file in *.txt
+# do
+#  ./pr ${file} > data/${file}
+#  cp data/${file} gzip/
+#  gzip gzip/${file}
+# #  ./size gzip/${file}.gz
+# done
+
+i=0
+j=0
+one=1
+
+for file1 in data/*.txt
 do
- ./pr ${file} > data/${file}
- cp data/${file} gzip/
- gzip gzip/${file}
- ./size gzip/${file}.gz
+ for file2 in data/*.txt
+ do
+  # ./merge ${file1} ${file2} > mergefiles/merged${i}-${j}.txt
+  j=$((${j}+${one}))
+ done
+ i=$((${i}+${one}))
+ j=0 
 done
