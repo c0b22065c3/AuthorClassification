@@ -1,4 +1,8 @@
-for file in works/*.txt
+gcc -o pr pretreatment.c
+gcc -o gz gzipper.c -lz
+
+for file in *.txt
 do
- ./pr ${file} > outputs/${file}
+ ./pr ${file} > data/${file}
+ ./gz data/${file} 
 done

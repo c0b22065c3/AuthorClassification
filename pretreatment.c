@@ -1,4 +1,6 @@
 // 前処理プログラム
+// コンパイル：gcc -o pr pretreatment.c
+// 実行：./pr ファイル名
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
